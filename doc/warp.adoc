@@ -273,6 +273,8 @@ Note that observers needs to be used for each of a group, since no request can b
 
 The Request Group API can be used also for verification of multiple requests with same inspection:
 
+リクエストグループAPIが、同じinspectionを持つ複数のリクエストの検証にも使用することができます。
+
 ----
 Warp
   .initiate(Activity)
@@ -284,10 +286,14 @@ Warp
 
 The definition above expresses that there are two similar requests expected which will be inspected by given Inspection.
 
+定義は、上記のInspectionによって検査されると予想される２つの同様のリクエストがあることを表わしています。
+
 
 ==== Group Identifiers
 
 For identification of a group, you can use arbitrary identifier (either primitive value or object with correctly implemented equivalence), so e.g.:
+
+groupの識別のために、あなたは任意の識別子（プリミティブ値または正しく実装された等価であるオブジェクトのいずれか）を使用することができます。例：
 
 ----
    .group("group1")
@@ -300,6 +306,8 @@ For identification of a group, you can use arbitrary identifier (either primitiv
 
 As a result of non-trivial (not single-request) execution of a Warp is a `WarpResult`.
 
+ワープの自明でない（非シングルリクエスト）を実行の結果がWarpResult`です。
+
 ----
 WarpResult result = 
   Warp
@@ -311,6 +319,8 @@ WarpResult result =
 
 Once you have provided an identifier for a group, you can retrieve a `WarpGroup` result:
 
+あなたはグループの識別子を指定すれば、`WarpGroup`結果を取得することができます。
+
 ----
 WarpGroup group = result.getGroup(id);
 ----
@@ -318,7 +328,9 @@ WarpGroup group = result.getGroup(id);
 The `WarpGroup` result can be used to:
 
 * obtain an inspection returned from server
+* サーバーから返されたinspectionを取得
 * verify the state of responses
+* レスポンスの状態を確認
 
 === Inspection
 
@@ -333,9 +345,13 @@ An initiated request can be inspected during its execution using
 An `Inspection` object 
 
 * is serialized on a client and sent to a server
+* クライアント上でシリアル化してサーバに送信される
 * can bear a payload
+* ペイロードを持てる
 * can contain lifecycle hooks which triggers verification logic
+* 検証ロジックのトリガーとなるライフサイクルフックを含めることができます
 * can be enriched using dependency injection
+* dependency injectionを使用することができます
 
 === Lifecycle Hooks
 
