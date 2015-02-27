@@ -6,12 +6,14 @@ Lukas Fryc <lfryc@redhat.com>
 == What is Warp?
 
 Arquillian Warp fills the void between client-side and server-side testing.
-* Arquillianはワープは、クライアント側とサーバー側のテストの間の空隙を埋める。
+
+Arquillianはワープは、クライアント側とサーバー側のテストの間の空隙を埋める。
 
 Using Warp, you can initiate an HTTP request using a client-side testing tool such as WebDriver and, in the same request cycle, execute in-container server-side tests. This powerful combination lets you cover integration across client and server.
 
 The Warp effectively removes a need for mocking and opens new possibilities for debugging.
-* Warpは効果的にモック作成の必要性を削除し、デバッグのために新たな可能性を開きます。
+
+Warpは効果的にモック作成の必要性を削除し、デバッグのために新たな可能性を開きます。
 
 == Where to Use Warp?
 
@@ -20,6 +22,7 @@ Warp allows you to know as little or as much of the application under test as yo
 === Gray-box Testing
 
 Initially, Warp can be used from any black-box testing tool (like HttpClient, REST client, Selenium WebDriver, etc.). But it allows to hook into server request lifecycle and verify what happens inside the box (referred to as white-box testing). That is why we identify Warp as gray-box testing framework.
+
 まず、Warpは、あらゆるブラックボックステストツール（HttpClient、RESTクライアント、Selenium WebDriverを、等）から使用することができます。しかし、それはサーバ要求のライフサイクルにフックと（ホワイトボックステストとも呼ばれる）箱の中に何が起こるか確認することができます。我々はグレーボックステストフレームワークとしてワープを識別する理由です。
 
 === Integration Testing
@@ -174,6 +177,7 @@ CustomInspection result =
 === Activity
 
 The `Activity` is an manipulation with a client which leads to communication (emits a HTTP request). You are unlimited in tooling choices, but you should always use an URL provided by the Arquillian:
+
 ★あなたは常にArquillianはによって提供されたURLを使用する必要があります。
 ----
 @ArquillianResource
@@ -202,6 +206,7 @@ Warp
 === Request Observers
 
 Since HTTP clients can generally emit more than one request at a time, we may need to limit what will Warp react on.
+
 HTTPクライアントは一般的に、一度に複数の要求を発することができるので、我々はWarpの反応がどうなるかを制限する必要があるかもしれません。
 
 We can achieve that using Warp API extended for Request Observing:
@@ -214,6 +219,7 @@ Warp
 ----
 
 In case of HTTP requests, we want to use `HttpObserver` specifically. We can implement at own or use predefined fluent API for observer specification.
+
 HTTPリクエストの場合には、我々は、特に`HttpObserver`使用する。私たちは、自分の時に実装したり、観測者の指定のために事前に定義された流暢なAPIを使用することができます。
 
 ==== Fluent API for HTTP Request Observing
@@ -232,9 +238,11 @@ Warp
 === Request Groups
 
 An `Activity` inspected by `Warp` can lead not only to just one request, but also several paralell or sequential requests.
+
 `Warp`によって検査された`Activity`はまた、ひとるのリクエストだけでなく、いくつかのparalellまたは順次リクエストにつながることができます。
 
 In order to test multiple requests during one `Warp` execution, you can use Request Groups API:
+
 ひとつの`Warp`の実行中に複数のリクエストをテストするためには、リクエストグループAPIを使用することができます
 
 ----
