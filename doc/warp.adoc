@@ -6,7 +6,6 @@ Lukas Fryc <lfryc@redhat.com>
 == What is Warp?
 
 Arquillian Warp fills the void between client-side and server-side testing.
-
 Arquillianはワープは、クライアント側とサーバー側のテストの間の空隙を埋める。
 
 Using Warp, you can initiate an HTTP request using a client-side testing tool such as WebDriver and, in the same request cycle, execute in-container server-side tests. This powerful combination lets you cover integration across client and server.
