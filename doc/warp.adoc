@@ -519,15 +519,24 @@ Keep in mind:
 
 In order to debug Warp execution effectively, one needs to know few facts:
 
+効果的にデバッグワープ実行するためには、知っている必要があります：
+
 * Warp tries to provide as much as context during its failures as possible
 ** (if you are not provided with a context of a failure, let's report it)
+* Warpは、可能な限り、その障害発生時にコンテキストを極力提供しようとする
+** （あなたがfailureのコンテキストで提供されていない場合、それを報告してみましょう）
 * the client-side execution can be debugged by usual approaches
+* クライアント側の実行は、通常のアプローチによってデバッグすることができます
 * the server-side execution can be debugged by usual approaches
+* サーバー側の実行は、通常のアプローチによってデバッグすることができます
 * Arquillian's debug output can reveal issues
+* Arquillianはのデバッグ出力は、問題を明らかにすることができます
 
 === Arquillian Debugging Mode
 
 In order to debug the tests effectively, one can reveal their internals by switching into an Arquillian debugging mode:
+
+効果的にテストをデバッグするために、Arquillianをデバッグモードに切り替えることで、その内部を明らかにすることができます。
 
 just pass `-Darquillian.debug=true` to the test and application server VM.
 
