@@ -220,7 +220,7 @@ Warp
 
 In case of HTTP requests, we want to use `HttpObserver` specifically. We can implement at own or use predefined fluent API for observer specification.
 
-HTTPリクエストの場合には、我々は、特に`HttpObserver`使用する。私たちは、自分の時に実装したり、観測者の指定のために事前に定義された流暢なAPIを使用することができます。
+HTTPリクエストの場合には、特に`HttpObserver`使用します。自分で実装したり、observerの指定のために事前に定義された流暢なAPIを使用することができます。
 
 ==== Fluent API for HTTP Request Observing
 
