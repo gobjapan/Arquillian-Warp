@@ -259,9 +259,15 @@ Warp
 
 Note that identifiers (`id1`, `id2`) are optional, they serve just a purpose of identification of a group in a result.
 
+識別子（ID1、ID2）がオプションであることに注意してください、それらはただ結果のgroupの識別という目的を果たします。
+
 Don't forget to use `.execute()` at the end of a Warp specification - it ends a specification and starts Warp execution process.
 
+ワープ指示の最後に`.execute()` を使用することを忘れないでください、それは指示を終了し、ワープの実行プロセスを開始します。
+
 Note that observers needs to be used for each of a group, since no request can belong to more than one group.
+
+リクエストは複数のグループに属することができないので、observersは各々のgroupのために使用される必要があることに注意してください。
 
 ==== Multiple Requests per Group
 
