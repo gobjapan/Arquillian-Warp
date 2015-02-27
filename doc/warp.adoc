@@ -349,15 +349,19 @@ An `Inspection` object
 * can bear a payload
 * ペイロードを持てる
 * can contain lifecycle hooks which triggers verification logic
-* 検証ロジックのトリガーとなるライフサイクルフックを含めることができます
+* 検証ロジックのトリガーとなるライフサイクルフックを含めることができる
 * can be enriched using dependency injection
-* dependency injectionを使用することができます
+* dependency injectionを使用することができる
 
 === Lifecycle Hooks
 
 Once an inspection is transfered to a server VM, it can be used to assert a state.
 
+inspectionがサーバVMに転送されると、それは状態をアサートするために使用することができます。
+
 In order to define, when the inspection should execute its logic, one needs to use so called request lifecycle hooks.
+
+inspectionがそのロジックを実行する必要がある場合、定義するために、リクエストライフサイクルのフックを使用する必要があります。
 
 Most basic lifecycle hooks are:
 
@@ -383,6 +387,8 @@ Warp
 
 There are also hooks specific for a each of the supported frameworks.
 
+フレームワークにサポートされているそれぞれ具体的なフックがあります。
+
 ==== JavaServer Faces Lifecycle Hooks
 
 JSF allows to hook into the request lifecycle:
@@ -395,6 +401,8 @@ JSF allows to hook into the request lifecycle:
 === Dependency Injection
 
 In order to test server-side state effectively, the `Inspection` can be enriched with any of the dependencies injectable by Arquillian:
+
+効果的にサーバー側の状態をテストするために、`Inspection`はArquillianによるDIで強化することができます：
 
 * `@Inject` for CDI beans
 * `@EJB` for EJB beans
@@ -423,6 +431,8 @@ Warp
 
 As you can see in a sample above, CDI beans can be injected on method-level even though you don't specify `@Inject`.
 
+上記のサンプルのとおり、`@Inject`指定しないにもかかわらず、CDI Beanはメソッドレベルでinjectすることができます。
+
 ==== Dependencies Specific to Servlets
 
 Following resources can be injected using @ArquillianResource:
@@ -448,12 +458,19 @@ Following resources can be injected using @ArquillianResource:
 
 Since an `Inspection` is a serializable object, it can contain a serializable payload which can be transfered with a request to a server, where it can be used as a base for a verification, for example:
 
+`Inspection`はシリアル化可能なオブジェクトであるため、検証のためのベースとして使用することができ、サーバにリクエストを転送することができるシリアル化可能なペイロードを含めることができます。例えば：
+
 * contain an object which will be use to initialize UI
+* UIを初期化するために使用されるオブジェクトを含むことができる
 
 Similarly, an `Inspection` processed on a server is serialized and sent to a client, thus it can contain an arbitrary information which can be used as a base for client verification logic, for example:
 
+同様に、サーバ上で処理された`Inspection`がシリアル化されてクライアントに送信され、クライアント検証ロジックのベースとして使用することができる任意の情報を含めることができます。例えば：
+
 * provide a client with the locale information of a server
+* サーバーのロケール情報をクライアントに提供
 * provide identifiers for UI elements in the generated page DOM
+* 生成されたページのDOMのUI要素のための識別子を提供
 
 Follows an example how one can use payload:
 
@@ -475,11 +492,19 @@ SomePayload payload = inspection.getPayload();
 
 The `Inspection` object has to follow just one contract in order to be transferable from a client to a server VM: all of its content has to be serializable.
 
+`Inspection`オブジェクトは、サーバVMクライアントから転送可能にするためにひとつの制約に従います。その内容すべてがシリアル化可能である必要があります。
+
 Note: Keep in mind that `Inspection` will be deployed to the server VM, so during its invocation, you can use only APIs available on server-side.
+
+注：`Inspection`はサーバVMにデプロイされることに留意してください、その呼び出し中に、サーバー側で利用可能なAPIのみを使用することができます。
 
 You can add desired APIs to the deployment and make them available to the server VM, but you should avoid exposing unwanted APIs to the server (e.g. API of client-side testing tools such as WebDriver).
 
+デプロイしたいAPIを追加しサーバVMで利用できるようにしますが、サーバーに不要なAPIを公開することは避けてください（例えばwebdriverなどのクライアント側のテストツールのAPIなど）。
+
 The execution of an inspection may lead into `ClassNotFoundException` or `LinkageError` if you won't stay compliant with this requirement.
+
+inspectionの実行が`ClassNotFoundException`や`LinkageError` につながる可能性があります、もしこの要件に準拠しないなら。
 
 ==== Serializability of Anonymous/Inner Inspections
 
