@@ -6,12 +6,13 @@ Lukas Fryc <lfryc@redhat.com>
 == What is Warp?
 
 Arquillian Warp fills the void between client-side and server-side testing.
-Arquillian‚Íƒ[ƒv‚ÍAƒNƒ‰ƒCƒAƒ“ƒg‘¤‚ÆƒT[ƒo[‘¤‚ÌƒeƒXƒg‚ÌŠÔ‚Ì‹óŒ„‚ğ–„‚ß‚éB
+
+Arquillianã¯ãƒ¯ãƒ¼ãƒ—ã¯ã€ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆå´ã¨ã‚µãƒ¼ãƒãƒ¼å´ã®ãƒ†ã‚¹ãƒˆã®é–“ã®ç©ºéš™ã‚’åŸ‹ã‚ã‚‹ã€‚
 
 Using Warp, you can initiate an HTTP request using a client-side testing tool such as WebDriver and, in the same request cycle, execute in-container server-side tests. This powerful combination lets you cover integration across client and server.
 
 The Warp effectively removes a need for mocking and opens new possibilities for debugging.
-Warp‚ÍŒø‰Ê“I‚Éƒ‚ƒbƒNì¬‚Ì•K—v«‚ğíœ‚µAƒfƒoƒbƒO‚Ì‚½‚ß‚ÉV‚½‚È‰Â”\«‚ğŠJ‚«‚Ü‚·B
+Warpã¯åŠ¹æœçš„ã«ãƒ¢ãƒƒã‚¯ä½œæˆã®å¿…è¦æ€§ã‚’å‰Šé™¤ã—ã€ãƒ‡ãƒãƒƒã‚°ã®ãŸã‚ã«æ–°ãŸãªå¯èƒ½æ€§ã‚’é–‹ãã¾ã™ã€‚
 
 == Where to Use Warp?
 
@@ -20,7 +21,7 @@ Warp allows you to know as little or as much of the application under test as yo
 === Gray-box Testing
 
 Initially, Warp can be used from any black-box testing tool (like HttpClient, REST client, Selenium WebDriver, etc.). But it allows to hook into server request lifecycle and verify what happens inside the box (referred to as white-box testing). That is why we identify Warp as gray-box testing framework.
-‚Ü‚¸AWarp‚ÍA‚ ‚ç‚ä‚éƒuƒ‰ƒbƒNƒ{ƒbƒNƒXƒeƒXƒgƒc[ƒ‹iHttpClientARESTƒNƒ‰ƒCƒAƒ“ƒgASelenium WebDriver‚ğA“™j‚©‚çg—p‚·‚é‚±‚Æ‚ª‚Å‚«‚Ü‚·B‚µ‚©‚µA‚»‚ê‚ÍƒT[ƒo—v‹‚Ìƒ‰ƒCƒtƒTƒCƒNƒ‹‚ÉƒtƒbƒN‚ÆiƒzƒƒCƒgƒ{ƒbƒNƒXƒeƒXƒg‚Æ‚àŒÄ‚Î‚ê‚éj” ‚Ì’†‚É‰½‚ª‹N‚±‚é‚©Šm”F‚·‚é‚±‚Æ‚ª‚Å‚«‚Ü‚·B‰äX‚ÍƒOƒŒ[ƒ{ƒbƒNƒXƒeƒXƒgƒtƒŒ[ƒ€ƒ[ƒN‚Æ‚µ‚Äƒ[ƒv‚ğ¯•Ê‚·‚é——R‚Å‚·B
+ã¾ãšã€Warpã¯ã€ã‚ã‚‰ã‚†ã‚‹ãƒ–ãƒ©ãƒƒã‚¯ãƒœãƒƒã‚¯ã‚¹ãƒ†ã‚¹ãƒˆãƒ„ãƒ¼ãƒ«ï¼ˆHttpClientã€RESTã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã€Selenium WebDriverã‚’ã€ç­‰ï¼‰ã‹ã‚‰ä½¿ç”¨ã™ã‚‹ã“ã¨ãŒã§ãã¾ã™ã€‚ã—ã‹ã—ã€ãã‚Œã¯ã‚µãƒ¼ãƒè¦æ±‚ã®ãƒ©ã‚¤ãƒ•ã‚µã‚¤ã‚¯ãƒ«ã«ãƒ•ãƒƒã‚¯ã¨ï¼ˆãƒ›ãƒ¯ã‚¤ãƒˆãƒœãƒƒã‚¯ã‚¹ãƒ†ã‚¹ãƒˆã¨ã‚‚å‘¼ã°ã‚Œã‚‹ï¼‰ç®±ã®ä¸­ã«ä½•ãŒèµ·ã“ã‚‹ã‹ç¢ºèªã™ã‚‹ã“ã¨ãŒã§ãã¾ã™ã€‚æˆ‘ã€…ã¯ã‚°ãƒ¬ãƒ¼ãƒœãƒƒã‚¯ã‚¹ãƒ†ã‚¹ãƒˆãƒ•ãƒ¬ãƒ¼ãƒ ãƒ¯ãƒ¼ã‚¯ã¨ã—ã¦ãƒ¯ãƒ¼ãƒ—ã‚’è­˜åˆ¥ã™ã‚‹ç†ç”±ã§ã™ã€‚
 
 === Integration Testing
 
@@ -148,9 +149,9 @@ public class BasicTest {
 The Warp requires two inputs from the user:
 
 * what activity should be done in order to trigger a request
-* ƒŠƒNƒGƒXƒg‚ÌƒgƒŠƒK[‚Æ‚È‚é activity ‚Í‚Ç‚Ì‚æ‚¤‚È‚à‚Ì‚©
+* ãƒªã‚¯ã‚¨ã‚¹ãƒˆã®ãƒˆãƒªã‚¬ãƒ¼ã¨ãªã‚‹ activity ã¯ã©ã®ã‚ˆã†ãªã‚‚ã®ã‹
 * how the server processing should be inspected
-* ƒT[ƒoˆ—‚Ç‚¤‚â‚Á‚ÄŒŸØ‚·‚é‚©
+* ã‚µãƒ¼ãƒå‡¦ç†ã©ã†ã‚„ã£ã¦æ¤œè¨¼ã™ã‚‹ã‹
 
 That intuitively leads us to the simplest possible high-level API:
 
@@ -174,7 +175,7 @@ CustomInspection result =
 === Activity
 
 The `Activity` is an manipulation with a client which leads to communication (emits a HTTP request). You are unlimited in tooling choices, but you should always use an URL provided by the Arquillian:
-š‚ ‚È‚½‚Íí‚ÉArquillian‚Í‚É‚æ‚Á‚Ä’ñ‹Ÿ‚³‚ê‚½URL‚ğg—p‚·‚é•K—v‚ª‚ ‚è‚Ü‚·B
+â˜…ã‚ãªãŸã¯å¸¸ã«Arquillianã¯ã«ã‚ˆã£ã¦æä¾›ã•ã‚ŒãŸURLã‚’ä½¿ç”¨ã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚
 ----
 @ArquillianResource
 URL contextPath;
@@ -202,7 +203,7 @@ Warp
 === Request Observers
 
 Since HTTP clients can generally emit more than one request at a time, we may need to limit what will Warp react on.
-HTTPƒNƒ‰ƒCƒAƒ“ƒg‚Íˆê”Ê“I‚ÉAˆê“x‚É•¡”‚Ì—v‹‚ğ”­‚·‚é‚±‚Æ‚ª‚Å‚«‚é‚Ì‚ÅA‰äX‚ÍWarp‚Ì”½‰‚ª‚Ç‚¤‚È‚é‚©‚ğ§ŒÀ‚·‚é•K—v‚ª‚ ‚é‚©‚à‚µ‚ê‚Ü‚¹‚ñB
+HTTPã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã¯ä¸€èˆ¬çš„ã«ã€ä¸€åº¦ã«è¤‡æ•°ã®è¦æ±‚ã‚’ç™ºã™ã‚‹ã“ã¨ãŒã§ãã‚‹ã®ã§ã€æˆ‘ã€…ã¯Warpã®åå¿œãŒã©ã†ãªã‚‹ã‹ã‚’åˆ¶é™ã™ã‚‹å¿…è¦ãŒã‚ã‚‹ã‹ã‚‚ã—ã‚Œã¾ã›ã‚“ã€‚
 
 We can achieve that using Warp API extended for Request Observing:
 
@@ -214,7 +215,7 @@ Warp
 ----
 
 In case of HTTP requests, we want to use `HttpObserver` specifically. We can implement at own or use predefined fluent API for observer specification.
-HTTPƒŠƒNƒGƒXƒg‚Ìê‡‚É‚ÍA‰äX‚ÍA“Á‚É`HttpObserver`g—p‚·‚éB„‚½‚¿‚ÍA©•ª‚Ì‚ÉÀ‘•‚µ‚½‚èAŠÏ‘ªÒ‚Ìw’è‚Ì‚½‚ß‚É–‘O‚É’è‹`‚³‚ê‚½—¬’¨‚ÈAPI‚ğg—p‚·‚é‚±‚Æ‚ª‚Å‚«‚Ü‚·B
+HTTPãƒªã‚¯ã‚¨ã‚¹ãƒˆã®å ´åˆã«ã¯ã€æˆ‘ã€…ã¯ã€ç‰¹ã«`HttpObserver`ä½¿ç”¨ã™ã‚‹ã€‚ç§ãŸã¡ã¯ã€è‡ªåˆ†ã®æ™‚ã«å®Ÿè£…ã—ãŸã‚Šã€è¦³æ¸¬è€…ã®æŒ‡å®šã®ãŸã‚ã«äº‹å‰ã«å®šç¾©ã•ã‚ŒãŸæµæš¢ãªAPIã‚’ä½¿ç”¨ã™ã‚‹ã“ã¨ãŒã§ãã¾ã™ã€‚
 
 ==== Fluent API for HTTP Request Observing
 
@@ -232,10 +233,10 @@ Warp
 === Request Groups
 
 An `Activity` inspected by `Warp` can lead not only to just one request, but also several paralell or sequential requests.
-`Warp`‚É‚æ‚Á‚ÄŒŸ¸‚³‚ê‚½`Activity`‚Í‚Ü‚½A‚Ğ‚Æ‚é‚ÌƒŠƒNƒGƒXƒg‚¾‚¯‚Å‚È‚­A‚¢‚­‚Â‚©‚Ìparalell‚Ü‚½‚Í‡ŸƒŠƒNƒGƒXƒg‚É‚Â‚È‚ª‚é‚±‚Æ‚ª‚Å‚«‚Ü‚·B
+`Warp`ã«ã‚ˆã£ã¦æ¤œæŸ»ã•ã‚ŒãŸ`Activity`ã¯ã¾ãŸã€ã²ã¨ã‚‹ã®ãƒªã‚¯ã‚¨ã‚¹ãƒˆã ã‘ã§ãªãã€ã„ãã¤ã‹ã®paralellã¾ãŸã¯é †æ¬¡ãƒªã‚¯ã‚¨ã‚¹ãƒˆã«ã¤ãªãŒã‚‹ã“ã¨ãŒã§ãã¾ã™ã€‚
 
 In order to test multiple requests during one `Warp` execution, you can use Request Groups API:
-‚Ğ‚Æ‚Â‚Ì`Warp`‚ÌÀs’†‚É•¡”‚ÌƒŠƒNƒGƒXƒg‚ğƒeƒXƒg‚·‚é‚½‚ß‚É‚ÍAƒŠƒNƒGƒXƒgƒOƒ‹[ƒvAPI‚ğg—p‚·‚é‚±‚Æ‚ª‚Å‚«‚Ü‚·
+ã²ã¨ã¤ã®`Warp`ã®å®Ÿè¡Œä¸­ã«è¤‡æ•°ã®ãƒªã‚¯ã‚¨ã‚¹ãƒˆã‚’ãƒ†ã‚¹ãƒˆã™ã‚‹ãŸã‚ã«ã¯ã€ãƒªã‚¯ã‚¨ã‚¹ãƒˆã‚°ãƒ«ãƒ¼ãƒ—APIã‚’ä½¿ç”¨ã™ã‚‹ã“ã¨ãŒã§ãã¾ã™
 
 ----
 Warp
