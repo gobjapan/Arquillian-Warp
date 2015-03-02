@@ -239,7 +239,7 @@ Warp
 
 An `Activity` inspected by `Warp` can lead not only to just one request, but also several paralell or sequential requests.
 
-`Warp`によって検査された`Activity`はまた、ひとるのリクエストだけでなく、いくつかのparalellまたは順次リクエストにつながることができます。
+`Warp`によって検査された`Activity`はまた、ひとつのリクエストだけでなく、いくつかのparalellまたは順次リクエストにつながることができます。
 
 In order to test multiple requests during one `Warp` execution, you can use Request Groups API:
 
